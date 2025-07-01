@@ -24,4 +24,6 @@ const init = async () => {
   channel.consume('export:notes', listener.listen, { noAck: true });
 };
 
-init();
+init().catch(err => {
+  console.error('errorror',err);
+});
